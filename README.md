@@ -1,3 +1,3 @@
-# Test Rhythm
+# MusicJam 2018
 
-record beats & test beats
+rhythm game in Unity
