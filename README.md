@@ -1,1 +1,3 @@
-# MusicJam2018Sep
+# Test Rhythm
+
+record beats & test beats
