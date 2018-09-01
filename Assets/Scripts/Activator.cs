@@ -33,9 +33,10 @@ public class Activator : MonoBehaviour {
             Pressed();
             // Condition when User wants to move character left or right
             if (key == KeyCode.A){
-                print("move left");
+                characterScript.isFacingRight = false;
                 character.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1, 0) * characterScript.dodgeSpeed);
             }  else if (key == KeyCode.D) {
+                characterScript.isFacingRight = true;
                 character.GetComponent<Rigidbody2D>().AddForce(Vector2.right * characterScript.dodgeSpeed);
             }
             // Condition when User wants to press Activator to destroy notes

@@ -16,7 +16,6 @@ public class Note : MonoBehaviour {
     Vector3 controlPosition;
     private float t;
     private float travelCounter = 0f;
-    private float noteToCharacterOffset = 0f;
 
     private void Awake()
     {
