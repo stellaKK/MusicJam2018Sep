@@ -8,7 +8,8 @@ public class NoteSpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Instantiate(noteToSpawn, transform.position, Quaternion.identity);
+        GameObject note = Instantiate(noteToSpawn, transform.position, Quaternion.identity);
+        note.transform.parent = this.transform;
     }
 	
 	// Update is called once per frame
