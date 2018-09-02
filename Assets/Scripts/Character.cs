@@ -22,4 +22,12 @@ public class Character : MonoBehaviour {
             transform.rotation = new Quaternion(0, 180, 0, 1);
         }
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Note>()) {
+            print(collision.transform.position);
+            Destroy(collision.gameObject);
+        }
+    }
 }

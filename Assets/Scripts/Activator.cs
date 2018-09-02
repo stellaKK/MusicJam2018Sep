@@ -63,15 +63,6 @@ public class Activator : MonoBehaviour {
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        active = false;
-        if (collision.GetComponent<Note>())
-        {
-            Destroy(collision.gameObject);
-        }
-    }
-
     void Pressed()
     {
         hasPressed = true;

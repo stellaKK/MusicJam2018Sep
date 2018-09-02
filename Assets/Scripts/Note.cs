@@ -40,26 +40,45 @@ public class Note : MonoBehaviour {
 
         if (gameObject.tag == "Up")
         {
-            t += Time.deltaTime / timeToTravel;
-            transform.position = Vector3.Lerp(startPosition, upEndPosition, t);
+            if (transform.position.y <= upEndPosition.y)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, character.transform.position, 3 * Time.deltaTime);
+            }
+            else {
+                t += Time.deltaTime / timeToTravel;
+                transform.position = Vector3.Lerp(startPosition, upEndPosition, t);
+            }
+        
         }
         else if (gameObject.tag == "Left")
         {
-            t += Time.deltaTime / timeToTravel;
+            if (transform.position.y <= leftEndPosition.y)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, character.transform.position, 3 * Time.deltaTime);
+            }
+            else {
+                t += Time.deltaTime / timeToTravel;
 
-            controlPosition = startPosition + (leftEndPosition - startPosition) / 2 + Vector3.left * 5.0f;
-            Vector2 m1 = Vector3.Lerp(startPosition, controlPosition, t);
-            Vector2 m2 = Vector3.Lerp(controlPosition, leftEndPosition, t);
-            transform.position = Vector2.Lerp(m1, m2, t);
+                controlPosition = startPosition + (leftEndPosition - startPosition) / 2 + Vector3.left * 5.0f;
+                Vector2 m1 = Vector3.Lerp(startPosition, controlPosition, t);
+                Vector2 m2 = Vector3.Lerp(controlPosition, leftEndPosition, t);
+                transform.position = Vector2.Lerp(m1, m2, t);
+            }           
         }
         else if (gameObject.tag == "Right")
         {
-            t += Time.deltaTime / timeToTravel;
+            if (transform.position.y <= rightEndPosition.y)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, character.transform.position, 3 * Time.deltaTime);
+            }
+            else {
+                t += Time.deltaTime / timeToTravel;
 
-            controlPosition = startPosition + (rightEndPosition - startPosition) / 2 + Vector3.right * 5.0f;
-            Vector2 m1 = Vector3.Lerp(startPosition, controlPosition, t);
-            Vector2 m2 = Vector3.Lerp(controlPosition, rightEndPosition, t);
-            transform.position = Vector2.Lerp(m1, m2, t);
+                controlPosition = startPosition + (rightEndPosition - startPosition) / 2 + Vector3.right * 5.0f;
+                Vector2 m1 = Vector3.Lerp(startPosition, controlPosition, t);
+                Vector2 m2 = Vector3.Lerp(controlPosition, rightEndPosition, t);
+                transform.position = Vector2.Lerp(m1, m2, t);
+            }
         }
     }
 }
