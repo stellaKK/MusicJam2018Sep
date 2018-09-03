@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1562dddbefd47b24597cf1f32d5fdb2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteToSpawn: {fileID: 1378820439112202, guid: 82bb6ebefe4c2b942a176d9f4bb47f28,
+  noteToSpawn: {fileID: 1012827756753144, guid: 44cf70a23183af94590ff8fbb7a5145d,
     type: 2}
 --- !u!1 &1076138505
 GameObject:
@@ -1283,7 +1283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1562dddbefd47b24597cf1f32d5fdb2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteToSpawn: {fileID: 1378820439112202, guid: 38a320b2634cfe3449696f3f53a94fba,
+  noteToSpawn: {fileID: 1012827756753144, guid: dd5c48aa5a59b40409ad4c937bc051b3,
     type: 2}
 --- !u!1 &2006694440
 GameObject:
@@ -1325,7 +1325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1562dddbefd47b24597cf1f32d5fdb2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteToSpawn: {fileID: 1378820439112202, guid: ed4d82df23f195341b71f33ff745583b,
+  noteToSpawn: {fileID: 1012827756753144, guid: c2ec4b6fbac1afb4f877a3ee57aa701e,
     type: 2}
 --- !u!1 &2069696878
 GameObject:
