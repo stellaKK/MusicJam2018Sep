@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class NoteSpawner : MonoBehaviour {
 
-    public GameObject noteToSpawn;
+    public GameObject singleNotes;
+    public GameObject doubleNotes;
 
-	// Use this for initialization
-	void Start () {
-        GameObject note = Instantiate(noteToSpawn, transform.position, Quaternion.identity);
+    public void SpawnSingleNote() {
+        GameObject note = Instantiate(singleNotes, transform.position, Quaternion.identity);
         note.transform.parent = this.transform;
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public void SpawnDoubleNote() {
+        GameObject note = Instantiate(doubleNotes, transform.position, Quaternion.identity);
+        note.transform.parent = this.transform;
+    }
 }
