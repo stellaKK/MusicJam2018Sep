@@ -14,11 +14,13 @@ public class Character : MonoBehaviour {
 
     private float damage = 1f;
     private Animator animator;
-	// Use this for initialization
-	void Start () {
+    GameManager gameMaster;
+    // Use this for initialization
+    void Start () {
         notesMissed = 0;
         animator = GetComponent<Animator>();
-	}
+        gameMaster = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
 
     // Update is called once per frame
     void Update() {
@@ -55,6 +57,7 @@ public class Character : MonoBehaviour {
         damage += notesMissed * 3;
         characterHealth -= damage;
         print(characterHealth);
+        gameMaster.comboCount = 0;
 
         animator.SetTrigger("takeDamageTrigger");
     }

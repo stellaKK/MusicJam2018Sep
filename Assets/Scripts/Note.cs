@@ -17,6 +17,7 @@ public class Note : MonoBehaviour {
     private float t;
     private float travelCounter = 0f;
 
+
     private void Awake()
     {
         character = GameObject.Find("Character");

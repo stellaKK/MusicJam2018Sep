@@ -19,11 +19,13 @@ public class Activator : MonoBehaviour {
 
     private float lastTime = -1.0f;
 
+    GameManager gameMaster;
 
     // Use this for initialization
     void Start () {
         spriteRenderer = GetComponent<SpriteRenderer>();
         character = GameObject.Find("Character");
+        gameMaster = GameObject.Find("GameManager").GetComponent<GameManager>();
         characterScript = character.GetComponent<Character>();
         color = spriteRenderer.color;
     }
@@ -65,6 +67,7 @@ public class Activator : MonoBehaviour {
 
                 if (active)
                 {
+                    gameMaster.comboCount += 1;
                     Destroy(note);
                 }
             }

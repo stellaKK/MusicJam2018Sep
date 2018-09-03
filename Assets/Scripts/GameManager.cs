@@ -4,11 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class GameMaster : MonoBehaviour {
+public class GameManager : MonoBehaviour {
+
+    public int comboCount = 0;
+    public int maxCombo = -1;
 
     private Character character;
     private float characterHealth;
     private Text healthText;
+    private Text comboText;
 
     private NoteSpawner upNoteSpawner;
     private NoteSpawner leftNoteSpawner;
@@ -28,16 +32,13 @@ public class GameMaster : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
+        maxCombo = -1;
         character = GameObject.Find("Character").GetComponent<Character>();
         healthText = GameObject.Find("HealthBar").GetComponent<Text>();
+        comboText = GameObject.Find("ComboBar").GetComponent<Text>();
         upNoteSpawner = GameObject.Find("UpSpawner").GetComponent<NoteSpawner>();
         leftNoteSpawner = GameObject.Find("LeftSpawner").GetComponent<NoteSpawner>();
         rightNoteSpawner = GameObject.Find("RightSpawner").GetComponent<NoteSpawner>();
-
-        //upNoteSpawner.SpawnDoubleNote();
-        //leftNoteSpawner.SpawnSingleNote();
-        //rightNoteSpawner.SpawnSingleNote();
-
 
         secPerBeat = 60f / bpm;
         dsptimesong = (float)AudioSettings.dspTime;
@@ -47,7 +48,13 @@ public class GameMaster : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        if (maxCombo <= comboCount)
+        {
+            maxCombo = comboCount;
+        }
+
         healthText.text = character.characterHealth.ToString();
+        comboText.text = maxCombo.ToString();
 
         songPosition = (float)AudioSettings.dspTime + 2f - dsptimesong;
         songPosInBeats = (float)Math.Round((songPosition / secPerBeat), 1);
@@ -58,6 +65,7 @@ public class GameMaster : MonoBehaviour {
             Debug.Log(index + " beat!");
             index++;
         }
+        
     }
 
     void SpawnNote() {

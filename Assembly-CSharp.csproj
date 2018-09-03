@@ -65,7 +65,7 @@
     <Compile Include="Assets\Scripts\Activators.cs" />
     <Compile Include="Assets\Scripts\Boss.cs" />
     <Compile Include="Assets\Scripts\Character.cs" />
-    <Compile Include="Assets\Scripts\GameMaster.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\MusicController.cs" />
     <Compile Include="Assets\Scripts\node.cs" />
     <Compile Include="Assets\Scripts\Note.cs" />
