@@ -38,7 +38,6 @@ GameObject:
   - component: {fileID: 212772759171211002}
   - component: {fileID: 50024477122892986}
   - component: {fileID: 114212528279257806}
-  - component: {fileID: 114842480635665220}
   - component: {fileID: 58358813064780218}
   m_Layer: 0
   m_Name: DoubleNoteL1Left
@@ -121,17 +120,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToTravel: 2
---- !u!114 &114842480635665220
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1807273456457058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52db3132031b7e04f96029acb3e7f07a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212485107000126524
 SpriteRenderer:
   m_ObjectHideFlags: 1
