@@ -10,22 +10,18 @@ public class Note : MonoBehaviour {
     private GameObject activatorUpArrow;
     private GameObject activatorLeftArrow;
     private GameObject activatorRightArrow;
-    private Rigidbody2D rigidBody;
 
     private Vector3 startPosition, upEndPosition, leftEndPosition, rightEndPosition;
     Vector3 controlPosition;
     private float t;
-    private float travelCounter = 0f;
 
 
     private void Awake()
     {
         character = GameObject.Find("Character");
-        rigidBody = GetComponent<Rigidbody2D>();
         activatorUpArrow = GameObject.Find("ActivatorUpArrow");
         activatorLeftArrow = GameObject.Find("ActivatorLeftArrow");
         activatorRightArrow = GameObject.Find("ActivatorRightArrow");
-        travelCounter = 0;
     }
 
     // Use this for initialization
