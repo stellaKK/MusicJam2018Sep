@@ -13,6 +13,7 @@ public class Activator : MonoBehaviour {
     private bool hasPressed = false; // check if use has pressed key
     private bool dodgeCooler = false;
     private float pressDelay = 0.1f; // how long before Player can press again
+    private bool isDoubleClicking = false;
 
     private GameObject character;
     private Character characterScript;
@@ -67,19 +68,36 @@ public class Activator : MonoBehaviour {
                     {
                         lastTime = Time.time;
                         characterScript.isAttackingDouble = true;
+                        isDoubleClicking = true;
                         print("double type");
                     }
                     else
                     {
                         lastTime = Time.time;
                         characterScript.isAttackingSingle = true;
+                        isDoubleClicking = false;
                         print("single type");
                     }
 
                     if (active)
                     {
-                        gameManager.comboCount += 1;
-                        Destroy(note);
+                        // if the note is double
+                        if (note.GetComponent<Double>())
+                        {
+                            if (isDoubleClicking)
+                            {
+                                gameManager.comboCount += 1;
+                                Destroy(note);
+                            }
+                            // if player miss double
+                            else {
+                            }
+                        }
+                        // if the note is single
+                        else {
+                            gameManager.comboCount += 1;
+                            Destroy(note);
+                        }   
                     }
                 }
                 // Reset Player press action after delay
@@ -112,6 +130,7 @@ public class Activator : MonoBehaviour {
         hasPressed = false;
         characterScript.isDodging = false;
         spriteRenderer.color = color;
+        isDoubleClicking = false;
     }
 
     void ResetDodge()

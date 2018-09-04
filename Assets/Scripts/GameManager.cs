@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour {
 
         if (upNextIndex < upNotes.Length && upNotes[upNextIndex] < songPosInBeats)
         {
-            upNoteSpawner.SpawnSingleNote();
+            upNoteSpawner.SpawnDoubleNote();
             upNextIndex++;
         }
         if (leftNextIndex < leftNotes.Length && leftNotes[leftNextIndex] < songPosInBeats)
