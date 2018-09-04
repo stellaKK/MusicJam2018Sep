@@ -9,7 +9,7 @@ public class Recorder : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        record = FindObjectOfType<Text>();
+        record = GetComponent<Text>();
 	}
 	
 	// Update is called once per frame
