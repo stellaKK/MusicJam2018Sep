@@ -56,7 +56,6 @@ public class Character : MonoBehaviour {
     private void TakingDamage() {
         damage = 1 + notesMissed * 3;
         characterHealth -= damage;
-        print(characterHealth);
         gameMaster.comboCount = 0;
 
         animator.SetTrigger("takeDamageTrigger");

@@ -7,6 +7,8 @@ public class Activator : MonoBehaviour {
     public KeyCode key;
     public GameObject note;
 
+    public bool createMode;
+
     private bool active = false; // check if note is inside activator
     private bool hasPressed = false; // check if use has pressed key
     private bool dodgeCooler = false;
@@ -19,13 +21,13 @@ public class Activator : MonoBehaviour {
 
     private float lastTime = -1.0f;
 
-    GameManager gameMaster;
+    GameManager gameManager;
 
     // Use this for initialization
     void Start () {
         spriteRenderer = GetComponent<SpriteRenderer>();
         character = GameObject.Find("Character");
-        gameMaster = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         characterScript = character.GetComponent<Character>();
         color = spriteRenderer.color;
     }
@@ -35,44 +37,56 @@ public class Activator : MonoBehaviour {
         // Get User Input on every frame update
         if (Input.GetKeyDown(key) && !hasPressed)
         {
-            Pressed();
-            // Condition when User wants to move character left or right
-            if (key == KeyCode.A && !dodgeCooler){
-                characterScript.isFacingRight = false;
-                characterScript.isDodging = true;
-                dodgeCooler = true;
-                character.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1, 0) * characterScript.dodgeSpeed);
-                Invoke("ResetDodge", 1f);
-            }  else if (key == KeyCode.D && !dodgeCooler) {
-                characterScript.isFacingRight = true;
-                characterScript.isDodging = true;
-                dodgeCooler = true;
-                character.GetComponent<Rigidbody2D>().AddForce(Vector2.right * characterScript.dodgeSpeed);
-                Invoke("ResetDodge", 1f);
-            }
-            // Condition when User wants to press Activator to destroy notes
-            else
+            if (createMode)
             {
-                if (Time.time - lastTime < 0.2f)
-                {
-                    lastTime = Time.time;
-                    characterScript.isAttackingDouble = true;
-                    print("double type");
-                }
-                else {
-                    lastTime = Time.time;
-                    characterScript.isAttackingSingle = true;
-                    print("single type");
-                }
-
-                if (active)
-                {
-                    gameMaster.comboCount += 1;
-                    Destroy(note);
-                }
+                gameManager.RecordPosition(this.transform.name);
             }
-            // Reset Player press action after delay
-            Invoke("ResetPressed", pressDelay);
+            else {
+                Pressed();
+                // Condition when User wants to move character left or right
+                if (key == KeyCode.A && !dodgeCooler)
+                {
+                    characterScript.isFacingRight = false;
+                    characterScript.isDodging = true;
+                    dodgeCooler = true;
+                    character.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1, 0) * characterScript.dodgeSpeed);
+                    Invoke("ResetDodge", 1f);
+                }
+                else if (key == KeyCode.D && !dodgeCooler)
+                {
+                    characterScript.isFacingRight = true;
+                    characterScript.isDodging = true;
+                    dodgeCooler = true;
+                    character.GetComponent<Rigidbody2D>().AddForce(Vector2.right * characterScript.dodgeSpeed);
+                    Invoke("ResetDodge", 1f);
+                }
+                // Condition when User wants to press Activator to destroy notes
+                else
+                {
+                    if (Time.time - lastTime < 0.2f)
+                    {
+                        lastTime = Time.time;
+                        characterScript.isAttackingDouble = true;
+                        print("double type");
+                    }
+                    else
+                    {
+                        lastTime = Time.time;
+                        characterScript.isAttackingSingle = true;
+                        print("single type");
+                    }
+
+                    if (active)
+                    {
+                        gameManager.comboCount += 1;
+                        Destroy(note);
+                    }
+                }
+                // Reset Player press action after delay
+                Invoke("ResetPressed", pressDelay);
+            }
+
+            
         }
     }
 

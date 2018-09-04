@@ -25,6 +25,11 @@ public class GameManager : MonoBehaviour {
     float secPerBeat;
     float dsptimesong;
 
+    float[] upNotes = { };
+    float[] leftNotes = { };
+    float[] rightNotes = { };
+
+
     float[] notes2 = { 2.6f, 3.6f, 4.5f, 5.4f, 6.3f, 7.3f, 8.2f, 9.2f, 10.1f, 11f, 12f, 12.9f, 13.8f,
         14.8f, 15.7f, 16.7f, 16.9f, 17.6f, 17.8f, 18.5f, 18.8f, 19.5f, 19.7f, 20.7f, 21.1f, 21.6f, 22f,
         22.5f, 23f, 23.2f, 24.2f, 24.6f, 25.1f, 25.6f, 26.1f, 26.5f, 27f, 27.5f, 27.9f, 28.4f, 28.9f,
@@ -66,12 +71,25 @@ public class GameManager : MonoBehaviour {
         if (songPosInBeats == notes2[index])
         {
             SpawnNote();
-            Debug.Log(index + " beat!");
             index++;
         }
         
     }
 
+    public void RecordPosition(string name) {
+        if (name == "ActivatorUpArrow")
+        {
+            print("up : " + (songPosInBeats - 2f).ToString());
+        }
+        else if (name == "ActivatorLeftArrow")
+        {
+            print("left : " + (songPosInBeats - 2f).ToString());
+        }
+        else {
+            print("right : " + (songPosInBeats - 2f).ToString());
+        }
+    }
+        
     void SpawnNote() {
         int number = UnityEngine.Random.Range(0, 3);
         if (number == 1)
