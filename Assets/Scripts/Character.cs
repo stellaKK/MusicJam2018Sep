@@ -54,7 +54,7 @@ public class Character : MonoBehaviour {
     }
 
     private void TakingDamage() {
-        damage += notesMissed * 3;
+        damage = 1 + notesMissed * 3;
         characterHealth -= damage;
         print(characterHealth);
         gameMaster.comboCount = 0;
