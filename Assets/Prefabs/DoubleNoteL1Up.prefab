@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4137680040772102}
   - component: {fileID: 212485107000126524}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: level1-missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114743301173097722}
   - component: {fileID: 114278281723083224}
   - component: {fileID: 58360440364981510}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoubleNoteL1Up
   m_TagString: Up
   m_Icon: {fileID: 0}

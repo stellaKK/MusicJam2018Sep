@@ -79,19 +79,22 @@ public class Activator : MonoBehaviour {
                         isDoubleClicking = false;
                     }
 
-                    if (active)
+                    if (active && note != null)
                     {
-                        if (note.GetComponent<Double>())
-                        {
-                            if (isDoubleClicking){
-                                gameManager.comboCount += 1;
-                                Destroy(note);
-                            }
-                        }
-                        else
+                        if (note.layer != 8)
                         {
                             gameManager.comboCount += 1;
                             Destroy(note);
+                            active = false;
+                        }
+                        else
+                        {
+                            if (isDoubleClicking)
+                            {
+                                gameManager.comboCount += 1;
+                                Destroy(note);
+                                active = false;
+                            } 
                         }
 
                         
