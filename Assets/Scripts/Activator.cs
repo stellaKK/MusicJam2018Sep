@@ -113,6 +113,7 @@ public class Activator : MonoBehaviour {
         if (collision.GetComponent<Note>())
         {
             note = collision.gameObject;
+            print(gameManager.songPosInBeats);
         }
     }
 

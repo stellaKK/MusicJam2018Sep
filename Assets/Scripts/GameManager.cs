@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour {
     int bpm = 30;
 
     float songPosition;
-    float songPosInBeats;
+    public float songPosInBeats;
     float secPerBeat;
     float dsptimesong;
 
@@ -36,9 +36,9 @@ public class GameManager : MonoBehaviour {
     int leftNextIndex = 0;
     int rightNextIndex = 0;
 
-    float[] upNotes = {2.5f, 4.3f, 7.2f, 8.1f, 9f, 9.9f, 10.9f, 15.6f, 17.5f, 18.4f, 19.4f, 20.3f, 21f, 21.2f, 22.2f, 23.1f, 24f, 24.7f, 25f, 25.9f, 26.8f, 27.7f, 28.5f, 28.7f};
-    float[] leftNotes = {3.4f, 5.3f, 11.8f, 13.7f, 15.8f, 17.2f, 18.3f, 19.2f, 20.1f, 22f, 22.9f, 23.8f, 25.7f, 26.6f, 27.5f};
-    float[] rightNotes = { 1.6f, 6.2f, 12.8f, 14.6f, 16.5f, 16.8f, 18.6f, 19.6f, 20.5f, 22.4f, 23.3f, 24.2f, 26.1f, 27f, 28f};
+    float[] upNotes = { 15.9f, 16.6f, 18.3f, 18.5f, 19.4f, 20.4f, 23.2f, 24.1f, 25f, 27.1f, 27.6f, 28.6f, 29.7f, 30.7f, 31.2f, 31.7f, 32.1f, 32.6f, 33.1f, 33.5f};
+    float[] leftNotes = { 1.6f, 2.5f, 3.2f, 4.2f, 5.1f, 6.1f, 7f, 7.9f, 8.9f, 9.8f, 10.8f, 11.7f, 12.7f, 13.6f, 14.5f, 15.5f, 15.7f, 16.4f, 17.3f, 17.8f, 19.2f, 20.2f, 21.1f, 21.5f, 22.1f, 22.1f, 23.1f, 23.8f, 24.8f, 25.7f, 26.7f, 27.9f, 28.8f, 29.5f};
+    float[] rightNotes = { 16.8f, 17.5f, 19.6f, 20.6f, 21.3f, 22.2f, 23.4f, 24.3f, 25.3f, 25.9f, 26.9f, 28.1f, 29f};
 
     int index = 0;
 
@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour {
 
         if (upNextIndex < upNotes.Length && upNotes[upNextIndex] < songPosInBeats)
         {
-            upNoteSpawner.SpawnDoubleNote();
+            upNoteSpawner.SpawnSingleNote();
             upNextIndex++;
         }
         if (leftNextIndex < leftNotes.Length && leftNotes[leftNextIndex] < songPosInBeats)
@@ -100,14 +100,14 @@ public class GameManager : MonoBehaviour {
 
         if (name == "ActivatorUpArrow")
         {
-            upRecord.setText(songPosInBeats);
+            upRecord.setText(songPosInBeats - 1f);
         }
         else if (name == "ActivatorLeftArrow")
         {
-            leftRecord.setText(songPosInBeats);
+            leftRecord.setText(songPosInBeats - 1f);
         }
         else {
-            rightRecord.setText(songPosInBeats);
+            rightRecord.setText(songPosInBeats - 1f);
         }
     }
 }
