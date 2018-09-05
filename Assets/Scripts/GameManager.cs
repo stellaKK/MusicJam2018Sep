@@ -36,8 +36,8 @@ public class GameManager : MonoBehaviour {
     int leftNextIndex = 0;
     int rightNextIndex = 0;
 
-    float[] upNotes = { 15.9f, 16.6f, 18.3f, 18.5f, 19.4f, 20.4f, 23.2f, 24.1f, 25f, 27.1f, 27.6f, 28.6f, 29.7f, 30.7f, 31.2f, 31.7f, 32.1f, 32.6f, 33.1f, 33.5f};
-    float[] leftNotes = { 1.6f, 2.5f, 3.2f, 4.2f, 5.1f, 6.1f, 7f, 7.9f, 8.9f, 9.8f, 10.8f, 11.7f, 12.7f, 13.6f, 14.5f, 15.5f, 15.7f, 16.4f, 17.3f, 17.8f, 19.2f, 20.2f, 21.1f, 21.5f, 22.1f, 22.1f, 23.1f, 23.8f, 24.8f, 25.7f, 26.7f, 27.9f, 28.8f, 29.5f};
+    float[] upNotes = { 1f, 15.9f, 16.6f, 18.3f, 18.5f, 19.4f, 20.4f, 23.2f, 24.1f, 25f, 27.1f, 27.6f, 28.6f, 29.7f, 30.7f, 31.2f, 31.7f, 32.1f, 32.6f, 33.1f, 33.5f};
+    float[] leftNotes = {1f, 1.6f, 2.5f, 3.2f, 4.2f, 5.1f, 6.1f, 7f, 7.9f, 8.9f, 9.8f, 10.8f, 11.7f, 12.7f, 13.6f, 14.5f, 15.5f, 15.7f, 16.4f, 17.3f, 17.8f, 19.2f, 20.2f, 21.1f, 21.5f, 22.1f, 22.1f, 23.1f, 23.8f, 24.8f, 25.7f, 26.7f, 27.9f, 28.8f, 29.5f};
     float[] rightNotes = { 16.8f, 17.5f, 19.6f, 20.6f, 21.3f, 22.2f, 23.4f, 24.3f, 25.3f, 25.9f, 26.9f, 28.1f, 29f};
 
     int index = 0;
@@ -79,18 +79,63 @@ public class GameManager : MonoBehaviour {
 
         if (upNextIndex < upNotes.Length && upNotes[upNextIndex] < songPosInBeats)
         {
-            upNoteSpawner.SpawnSingleNote();
-            upNextIndex++;
+            if (upNotes[upNextIndex] == leftNotes[leftNextIndex])
+            {
+                upNoteSpawner.SpawnDoubleNote();
+                upNextIndex++;
+                leftNoteSpawner.SpawnDoubleNote();
+                leftNextIndex++;
+            } else if (upNotes[upNextIndex] == rightNotes[rightNextIndex]) {
+                upNoteSpawner.SpawnDoubleNote();
+                upNextIndex++;
+                rightNoteSpawner.SpawnDoubleNote();
+                rightNextIndex++;
+            }
+            else {
+                upNoteSpawner.SpawnSingleNote();
+                upNextIndex++;
+            }
         }
         if (leftNextIndex < leftNotes.Length && leftNotes[leftNextIndex] < songPosInBeats)
         {
-            leftNoteSpawner.SpawnSingleNote();
-            leftNextIndex++;
+            if (leftNotes[leftNextIndex] == upNotes[upNextIndex] )
+            {
+                leftNoteSpawner.SpawnDoubleNote();
+                leftNextIndex++;
+                upNoteSpawner.SpawnDoubleNote();
+                upNextIndex++;
+            } else if (leftNotes[upNextIndex] == rightNotes[rightNextIndex])
+            {
+                leftNoteSpawner.SpawnDoubleNote();
+                leftNextIndex++;
+                rightNoteSpawner.SpawnDoubleNote();
+                rightNextIndex++;
+            }
+            else
+            {
+                leftNoteSpawner.SpawnSingleNote();
+                leftNextIndex++;
+            }
         }
         if (rightNextIndex < rightNotes.Length && rightNotes[rightNextIndex] < songPosInBeats)
         {
-            rightNoteSpawner.SpawnSingleNote();
-            rightNextIndex++;
+            if (rightNotes[leftNextIndex] == upNotes[upNextIndex])
+            {
+                rightNoteSpawner.SpawnDoubleNote();
+                rightNextIndex++;
+                upNoteSpawner.SpawnDoubleNote();
+                upNextIndex++;
+            } else if (rightNotes[rightNextIndex] == leftNotes[upNextIndex]) {
+                rightNoteSpawner.SpawnDoubleNote();
+                rightNextIndex++;
+                leftNoteSpawner.SpawnDoubleNote();
+                leftNextIndex++;
+            }
+            else
+            {
+                rightNoteSpawner.SpawnSingleNote();
+                rightNextIndex++;
+            }
         }
 
     }
