@@ -303,48 +303,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 212417443912751288, guid: eebcb50ffefc97445b71f9ed0fb21e05,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: d39ced83a1354e244b155553cb1ceb87,
-        type: 3}
-    - target: {fileID: 114918117088377802, guid: eebcb50ffefc97445b71f9ed0fb21e05,
-        type: 2}
-      propertyPath: doubleNotes
-      value: 
-      objectReference: {fileID: 1077139760240504, guid: af341eb1b27d15e46872831019825873,
-        type: 2}
-    - target: {fileID: 114918117088377802, guid: eebcb50ffefc97445b71f9ed0fb21e05,
-        type: 2}
-      propertyPath: singleNotes
-      value: 
-      objectReference: {fileID: 1940754751860330, guid: 1c6588b26075aef4dabacca77a4feaef,
-        type: 2}
-    - target: {fileID: 114991831893592788, guid: eebcb50ffefc97445b71f9ed0fb21e05,
-        type: 2}
-      propertyPath: singleNotes
-      value: 
-      objectReference: {fileID: 1640915757569806, guid: f77ce64be4d64e549aeba5af6cafc9a9,
-        type: 2}
-    - target: {fileID: 114991831893592788, guid: eebcb50ffefc97445b71f9ed0fb21e05,
-        type: 2}
-      propertyPath: doubleNotes
-      value: 
-      objectReference: {fileID: 1050406338584976, guid: 8530f1b7b9d952d448c2f8f208c652d0,
-        type: 2}
-    - target: {fileID: 114848152017353254, guid: eebcb50ffefc97445b71f9ed0fb21e05,
-        type: 2}
-      propertyPath: singleNotes
-      value: 
-      objectReference: {fileID: 1259626118762070, guid: 0789014cbea024e4195f64082d93f6d5,
-        type: 2}
-    - target: {fileID: 114848152017353254, guid: eebcb50ffefc97445b71f9ed0fb21e05,
-        type: 2}
-      propertyPath: doubleNotes
-      value: 
-      objectReference: {fileID: 1036510665053498, guid: 33a648df92d072a4ebfe09d7e21cb4d7,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eebcb50ffefc97445b71f9ed0fb21e05, type: 2}
   m_IsPrefabAsset: 0
