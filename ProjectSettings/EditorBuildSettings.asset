@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/_Scenes/QuestSelection.unity
     guid: 017c4c5a3ddae9e49b483ef979306868
   - enabled: 1
+    path: Assets/_Scenes/Instruction.unity
+    guid: 6ddf2b9932f9d634caf00900694533ed
+  - enabled: 1
     path: Assets/_Scenes/Level1.unity
     guid: b11d91b76908b824eb6bc0c2b535ca54
   - enabled: 1

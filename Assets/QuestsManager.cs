@@ -27,7 +27,11 @@ public class QuestsManager : MonoBehaviour {
         quest2.SetActive(false);
         quest3.SetActive(false);
 
+        DisableButtons();
         EnableButtons();
+        
+
+        
     }
 
     public void DisableButtons() {
@@ -38,8 +42,16 @@ public class QuestsManager : MonoBehaviour {
 
     public void EnableButtons() {
         quest1Button.interactable = true;
-        quest2Button.interactable = true;
-        quest3Button.interactable = true;
+
+        if (PlayerPrefs.GetInt("Quest2Unlocked") == 1)
+        {
+            quest2Button.interactable = true;
+        }
+
+        if (PlayerPrefs.GetInt("Quest3Unlocked") == 1)
+        {
+            quest2Button.interactable = true;
+        }
     }
 
     public void SelectQuest1() {

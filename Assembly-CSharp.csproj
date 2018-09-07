@@ -64,6 +64,7 @@
     <Compile Include="Assets\Double.cs" />
     <Compile Include="Assets\LevelManager.cs" />
     <Compile Include="Assets\QuestsManager.cs" />
+    <Compile Include="Assets\ResultManager.cs" />
     <Compile Include="Assets\Scripts\Activator.cs" />
     <Compile Include="Assets\Scripts\Activators.cs" />
     <Compile Include="Assets\Scripts\Boss.cs" />
