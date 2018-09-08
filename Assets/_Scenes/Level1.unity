@@ -701,17 +701,17 @@ Prefab:
     - target: {fileID: 114016399348931704, guid: ecf239445a7dea7409dff589ca860137,
         type: 2}
       propertyPath: createMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114356617462552762, guid: ecf239445a7dea7409dff589ca860137,
         type: 2}
       propertyPath: createMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114260270771949050, guid: ecf239445a7dea7409dff589ca860137,
         type: 2}
       propertyPath: createMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 58788297597293428, guid: ecf239445a7dea7409dff589ca860137,
         type: 2}

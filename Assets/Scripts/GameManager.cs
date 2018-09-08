@@ -79,20 +79,20 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (character.characterHealth <= 0)
-        {
-            PlayerPrefs.SetInt("Fail", 1);
-            SceneManager.LoadScene("Result");
-        }
+        //if (character.characterHealth <= 0)
+        //{
+        //    PlayerPrefs.SetInt("Fail", 1);
+        //    SceneManager.LoadScene("Result");
+        //}
 
-        if (!music.isPlaying) {
-            PlayerPrefs.SetInt("Fail", 0);
-            PlayerPrefs.SetString("CurrentScene", SceneManager.GetActiveScene().name);
-            PlayerPrefs.SetString("SongName", music.clip.name);
-            PlayerPrefs.SetInt("Combo", maxCombo);
+        //if (!music.isPlaying) {
+        //    PlayerPrefs.SetInt("Fail", 0);
+        //    PlayerPrefs.SetString("CurrentScene", SceneManager.GetActiveScene().name);
+        //    PlayerPrefs.SetString("SongName", music.clip.name);
+        //    PlayerPrefs.SetInt("Combo", maxCombo);
             
-            SceneManager.LoadScene("Result");
-        }
+        //    SceneManager.LoadScene("Result");
+        //}
 
 
         if (maxCombo <= comboCount)
