@@ -540,18 +540,13 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03099d259d2b31c498fd2e93a9892f04, type: 2}
   m_IsPrefabAsset: 0
---- !u!1001 &1956617803
+--- !u!1001 &1994348803
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 224157004791832056, guid: 84a4a89d703a91e478280973a61a3db0,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 224157004791832056, guid: 84a4a89d703a91e478280973a61a3db0,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -641,10 +636,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1906377186672354, guid: 84a4a89d703a91e478280973a61a3db0, type: 2}
-      propertyPath: m_Name
-      value: Canvas
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84a4a89d703a91e478280973a61a3db0, type: 2}

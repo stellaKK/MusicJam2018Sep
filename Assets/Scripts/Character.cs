@@ -5,7 +5,8 @@ using UnityEngine;
 public class Character : MonoBehaviour {
 
     public int notesMissed = 0;
-    public float characterHealth = 100f;
+    public float characterMaxHealth = 100f;
+    public float characterHealth;
     public float dodgeSpeed;
     public bool isFacingRight = true;
     public bool isDodging;
@@ -18,6 +19,7 @@ public class Character : MonoBehaviour {
     // Use this for initialization
     void Start () {
         notesMissed = 0;
+        characterHealth = characterMaxHealth;
         animator = GetComponent<Animator>();
         gameMaster = GameObject.Find("GameManager").GetComponent<GameManager>();
     }

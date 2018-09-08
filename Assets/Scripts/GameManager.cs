@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour {
     public int maxCombo = -1;
 
     private Character character;
-    private Text healthText;
+    private Slider healthBar;
+    private Image healthBarFill;
     private Text comboText;
 
     Recorder upRecord;
@@ -59,7 +60,10 @@ public class GameManager : MonoBehaviour {
 
         maxCombo = -1;
         character = GameObject.Find("Character").GetComponent<Character>();
-        healthText = GameObject.Find("HealthBar").GetComponent<Text>();
+
+        healthBar = GameObject.Find("HealthBar").GetComponent<Slider>();
+        healthBarFill = GameObject.Find("HealthBarFill").GetComponent<Image>();
+
         comboText = GameObject.Find("ComboBar").GetComponent<Text>();
         upNoteSpawner = GameObject.Find("UpSpawner").GetComponent<NoteSpawner>();
         leftNoteSpawner = GameObject.Find("LeftSpawner").GetComponent<NoteSpawner>();
@@ -94,18 +98,26 @@ public class GameManager : MonoBehaviour {
         //    SceneManager.LoadScene("Result");
         //}
 
-
+        // handle Combo Number
         if (maxCombo <= comboCount)
         {
             maxCombo = comboCount;
         }
-
-        healthText.text = character.characterHealth.ToString();
         comboText.text = comboCount.ToString();
+
+        // Handle Player Health
+        healthBar.value = character.characterHealth / character.characterMaxHealth;
+        if (healthBar.value > 0.3)
+        {
+            healthBarFill.color = Color.green;
+        }
+        else {
+            healthBarFill.color = Color.red;
+        }
+
 
         songPosition = (float)AudioSettings.dspTime - dsptimesong;
         songPosInBeats = (float)Math.Round((songPosition / secPerBeat), 1);
-
 
         if (upNextIndex < l1UpNotes.Length && l1UpNotes[upNextIndex] < songPosInBeats)
         {
