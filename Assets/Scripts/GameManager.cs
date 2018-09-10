@@ -39,9 +39,9 @@ public class GameManager : MonoBehaviour {
     int leftNextIndex = 0;
     int rightNextIndex = 0;
 
-    float[] l1UpNotes = { 1f, 15.9f, 16.6f, 18.3f, 18.5f, 19.4f, 20.4f, 23.2f, 24.1f, 25f, 27.1f, 27.6f, 28.6f, 29.7f, 30.7f, 31.2f, 31.7f, 32.1f, 32.6f, 33.1f, 33.5f};
-    float[] l1LeftNotes = {1f, 1.6f, 2.5f, 3.2f, 4.2f, 5.1f, 6.1f, 7f, 7.9f, 8.9f, 9.8f, 10.8f, 11.7f, 12.7f, 13.6f, 14.5f, 15.5f, 15.7f, 16.4f, 17.3f, 17.8f, 19.2f, 20.2f, 21.1f, 21.5f, 22.1f, 22.1f, 23.1f, 23.8f, 24.8f, 25.7f, 26.7f, 27.9f, 28.8f, 29.5f};
-    float[] l1RightNotes = { 16.8f, 17.5f, 19.6f, 20.6f, 21.3f, 22.2f, 23.4f, 24.3f, 25.3f, 25.9f, 26.9f, 28.1f, 29f};
+    float[] l1UpNotes = {14.05f, 16.25f, 24.4f, 26.2f };
+    float[] l1LeftNotes = { 3.5f, 5.7f, 8f, 9.1f, 10.2f, 11.3f, 12.4f, 13.5f, 14.6f, 15.7f, 16.8f, 17.9f, 18.95f, 19.8f, 20.8f, 21.7f, 22.6f, 23.5f, 24.4f, 25.3f, 26.2f, 27.1f, 28f, 28.9f, 29.8f, 30.7f, 31.6f };
+    float[] l1RightNotes = { 4.6f, 6.8f, 8.55f, 9.65f, 10.75f, 11.85f, 12.95f, 14.05f, 15.15f, 16.25f, 17.35f, 18.40f, 19.45f, 20.35f, 21.25f, 22.15f, 23.05f, 23.95f, 24.85f, 25.75f, 26.65f, 27.55f, 28.45f, 29.35f, 30.25f, 31.15f, 32.05f };
     float[] l2UpNotes = { };
     float[] l2LeftNotes = { };
     float[] l2RightNotes = { };
