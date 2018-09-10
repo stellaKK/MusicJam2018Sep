@@ -49,6 +49,9 @@ public class GameManager : MonoBehaviour {
     float[] l3LeftNotesList = { };
     float[] l3RightNotesList = { };
 
+    private bool upEnd = false;
+    private bool leftEnd = false;
+    private bool rightEnd = false;
 
     int index = 0;
 
@@ -141,19 +144,29 @@ public class GameManager : MonoBehaviour {
 
     }
 
-    void SpawningNotes(float[] upNotes, float[] LeftNotes, float[] rightNotes) {
+    void SpawningNotes(float[] upNotes, float[] leftNotes, float[] rightNotes) {
+        if (upNextIndex >= upNotes.Length) {
+            upEnd = true;
+        }
+        if (leftNextIndex >= leftNotes.Length) {
+            leftEnd = true;
+        }
+        if (rightIndex >= rightNotes.Length) {
+            rightEnd = true;
+        }
+
         if (upNextIndex < upNotes.Length && upNotes[upNextIndex] < songPosInBeats)
         {
-            if (leftNextIndex < LeftNotes.Length || rightNextIndex < rightNotes.Length)
+            if (!leftEnd || !rightEnd)
             {
-                if (upNotes[upNextIndex] == LeftNotes[leftNextIndex])
+                if (!leftEnd && upNotes[upNextIndex] == leftNotes[leftNextIndex])
                 {
                     upNoteSpawner.SpawnDoubleNote();
                     upNextIndex++;
                     leftNoteSpawner.SpawnDoubleNote();
                     leftNextIndex++;
                 }
-                else if (upNotes[upNextIndex] == rightNotes[rightNextIndex])
+                else if (!rightEnd && upNotes[upNextIndex] == rightNotes[rightNextIndex])
                 {
                     upNoteSpawner.SpawnDoubleNote();
                     upNextIndex++;
@@ -172,18 +185,18 @@ public class GameManager : MonoBehaviour {
                 upNextIndex++;
             }
         }
-        if (leftNextIndex < LeftNotes.Length && LeftNotes[leftNextIndex] < songPosInBeats)
+        if (leftNextIndex < leftNotes.Length && leftNotes[leftNextIndex] < songPosInBeats)
         {
             if (upNextIndex < upNotes.Length || rightNextIndex < rightNotes.Length)
             {
-                if (LeftNotes[leftNextIndex] == upNotes[upNextIndex])
+                if (!upEnd && leftNotes[leftNextIndex] == upNotes[upNextIndex])
                 {
                     leftNoteSpawner.SpawnDoubleNote();
                     leftNextIndex++;
                     upNoteSpawner.SpawnDoubleNote();
                     upNextIndex++;
                 }
-                else if (LeftNotes[upNextIndex] == rightNotes[rightNextIndex])
+                else if (!rightEnd && leftNotes[upNextIndex] == rightNotes[rightNextIndex])
                 {
                     leftNoteSpawner.SpawnDoubleNote();
                     leftNextIndex++;
@@ -206,16 +219,16 @@ public class GameManager : MonoBehaviour {
         }
         if (rightNextIndex < rightNotes.Length && rightNotes[rightNextIndex] < songPosInBeats)
         {
-            if (upNextIndex < upNotes.Length || leftNextIndex < LeftNotes.Length)
+            if (upNextIndex < upNotes.Length || leftNextIndex < leftNotes.Length)
             {
-                if (rightNotes[leftNextIndex] == upNotes[upNextIndex])
+                if (!upEnd && rightNotes[leftNextIndex] == upNotes[upNextIndex])
                 {
                     rightNoteSpawner.SpawnDoubleNote();
                     rightNextIndex++;
                     upNoteSpawner.SpawnDoubleNote();
                     upNextIndex++;
                 }
-                else if (rightNotes[rightNextIndex] == LeftNotes[upNextIndex])
+                else if (!leftEnd && rightNotes[rightNextIndex] == leftNotes[upNextIndex])
                 {
                     rightNoteSpawner.SpawnDoubleNote();
                     rightNextIndex++;
