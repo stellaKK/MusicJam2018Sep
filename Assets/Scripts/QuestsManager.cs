@@ -14,7 +14,7 @@ public class QuestsManager : MonoBehaviour {
     Button quest2Button;
     Button quest3Button;
 
-    // Use this for initialization
+    // Use this for initialization 
     void Start () {
         quest1Button = GameObject.Find("Quest1").GetComponent<Button>();
         quest2Button = GameObject.Find("Quest2").GetComponent<Button>();
@@ -29,9 +29,7 @@ public class QuestsManager : MonoBehaviour {
 
         DisableButtons();
         EnableButtons();
-        
-
-        
+       
     }
 
     public void DisableButtons() {

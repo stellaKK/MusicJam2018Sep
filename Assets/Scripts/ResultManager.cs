@@ -22,18 +22,27 @@ public class ResultManager : MonoBehaviour {
         questUnlocked = GameObject.Find("QuestUnlocked").GetComponent<Text>();
         rank = GameObject.Find("Rank").GetComponent<Text>();
 
-
         songName.text = PlayerPrefs.GetString("SongName");
         combo.text = PlayerPrefs.GetInt("Combo").ToString();
 
+
         if (PlayerPrefs.GetInt("Fail") == 1)
         {
+            // If player fails the last scene, set rank to F
             rank.text = "F";
+            questStatus.text = "Not Completed";
         }
         else {
-            CalculateRank();        }
-
-        
+            CalculateRank();
+            questStatus.text = "Completed";
+            if (PlayerPrefs.GetString("CurrentScene") == "Level1") {
+                PlayerPrefs.SetInt("Quest2Unlocked", 1);
+                questUnlocked.text = "Quest 2 Unlocked.";
+            } else if (PlayerPrefs.GetString("CurrentScene") == "Level2") {
+                PlayerPrefs.SetInt("Quest3Unlocked", 1);
+                questUnlocked.text = "Quest 3 Unlocked.";
+            }
+        }
     }
 
 

@@ -761,8 +761,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 7.76, y: 23.77}
+  m_SizeDelta: {x: 305.56, y: 162.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &518921053
 MonoBehaviour:
@@ -796,9 +796,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Quest 1 Information
-
-'
+  m_Text: "01. Red Slime\n\n\nA red slimmme was found a few days ago. Unlike other
+    normal slimmme that which is meek, it was irritable with no reasons.\r\n\r\nInvestigate
+    the red slimmme and calm it down."
 --- !u!222 &518921054
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1638,8 +1638,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 7.3, y: 25.2}
+  m_SizeDelta: {x: 308.36, y: 160.03}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1358553518
 MonoBehaviour:
@@ -1673,9 +1673,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Quest 3 Information
-
-'
+  m_Text: "03. Fuoca\r\n\nA witch named Fuoca enjoys talking with adventurers about
+    their stories and training them.\r\n\r\nTalk to Fuoca."
 --- !u!222 &1358553519
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2434,8 +2433,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 7.73, y: 20.4}
+  m_SizeDelta: {x: 307.5, y: 169.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1902328993
 MonoBehaviour:
@@ -2469,9 +2468,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Quest 2 Information
-
-'
+  m_Text: "02. Green Slimmme\r\n\nA green slimmme was found a few days ago and it
+    was irritable with no reasons as well.\r\n\r\nInvestigate the green slimmme and
+    calm it down.\n"
 --- !u!222 &1902328994
 CanvasRenderer:
   m_ObjectHideFlags: 0
