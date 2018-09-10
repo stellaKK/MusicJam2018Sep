@@ -147,6 +147,8 @@ public class GameManager : MonoBehaviour {
     }
 
     void SpawningNotes(float[] upNotes, float[] leftNotes, float[] rightNotes) {
+        print(rightNextIndex + " , " + rightNotes.Length);
+
         if (upNextIndex >= upNotes.Length) {
             upEnd = true;
         }
@@ -198,7 +200,7 @@ public class GameManager : MonoBehaviour {
                     upNoteSpawner.SpawnDoubleNote();
                     upNextIndex++;
                 }
-                else if (!rightEnd && leftNotes[upNextIndex] == rightNotes[rightNextIndex])
+                else if (!rightEnd && leftNotes[leftNextIndex] == rightNotes[rightNextIndex])
                 {
                     leftNoteSpawner.SpawnDoubleNote();
                     leftNextIndex++;
@@ -221,33 +223,37 @@ public class GameManager : MonoBehaviour {
         }
         if (rightNextIndex < rightNotes.Length && rightNotes[rightNextIndex] < songPosInBeats)
         {
-            if (upNextIndex < upNotes.Length || leftNextIndex < leftNotes.Length)
-            {
-                if (!upEnd && rightNotes[leftNextIndex] == upNotes[upNextIndex])
+                if (!upEnd)
                 {
-                    rightNoteSpawner.SpawnDoubleNote();
-                    rightNextIndex++;
-                    upNoteSpawner.SpawnDoubleNote();
-                    upNextIndex++;
+                    if (rightNotes[rightNextIndex] == upNotes[upNextIndex])
+                    {
+                        rightNoteSpawner.SpawnDoubleNote();
+                        rightNextIndex++;
+                        upNoteSpawner.SpawnDoubleNote();
+                        upNextIndex++;
+                    } else {
+                         rightNoteSpawner.SpawnSingleNote();
+                         rightNextIndex++;
+                    }
                 }
-                else if (!leftEnd && rightNotes[rightNextIndex] == leftNotes[upNextIndex])
+                else if (!leftEnd)
                 {
-                    rightNoteSpawner.SpawnDoubleNote();
-                    rightNextIndex++;
-                    leftNoteSpawner.SpawnDoubleNote();
-                    leftNextIndex++;
+                    if (rightNotes[rightNextIndex] == leftNotes[leftNextIndex])
+                    {
+                        rightNoteSpawner.SpawnDoubleNote();
+                        rightNextIndex++;
+                        leftNoteSpawner.SpawnDoubleNote();
+                        leftNextIndex++;
+                    } else {
+                        rightNoteSpawner.SpawnSingleNote();
+                        rightNextIndex++;
+                    }
                 }
                 else
                 {
                     rightNoteSpawner.SpawnSingleNote();
                     rightNextIndex++;
                 }
-            }
-            else
-            {
-                rightNoteSpawner.SpawnSingleNote();
-                rightNextIndex++;
-            }
         }
     }
 
