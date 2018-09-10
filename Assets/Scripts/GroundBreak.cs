@@ -82,7 +82,6 @@ public class GroundBreak : MonoBehaviour {
     }
 
     void BreaksBlock(GameObject block) {
-        print("is breaking");
         SpriteRenderer fadePanel = block.GetComponent<SpriteRenderer>();
         Color currentColor = fadePanel.color;
 
