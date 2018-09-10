@@ -32,6 +32,10 @@ public class QuestsManager : MonoBehaviour {
        
     }
 
+    public void ResetQuests() {
+        PlayerPrefs.DeleteAll();
+    }
+
     public void DisableButtons() {
         quest1Button.interactable = false;
         quest2Button.interactable = false;
