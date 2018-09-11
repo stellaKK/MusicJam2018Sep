@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\Recorder.cs" />
     <Compile Include="Assets\Scripts\ResultManager.cs" />
     <Compile Include="Assets\Shredder.cs" />
+    <None Include="Assets\Imported\ColorfulButtons\Credits.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/Project/TestRhythm/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
