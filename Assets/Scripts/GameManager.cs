@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
     private Character character;
     private Slider healthBar;
     private Image healthBarFill;
+    private Text healthText;
     private Text comboText;
 
     Recorder upRecord;
@@ -66,6 +67,7 @@ public class GameManager : MonoBehaviour {
         character = GameObject.Find("Character").GetComponent<Character>();
 
         healthBar = GameObject.Find("HealthBar").GetComponent<Slider>();
+        healthText = GameObject.Find("HealthText").GetComponent<Text>();
         healthBarFill = GameObject.Find("HealthBarFill").GetComponent<Image>();
 
         comboText = GameObject.Find("ComboBar").GetComponent<Text>();
@@ -116,6 +118,8 @@ public class GameManager : MonoBehaviour {
         comboText.text = comboCount.ToString();
 
         // Handle Player Health
+        healthText.text = character.characterHealth.ToString() + "/"
+            + character.characterMaxHealth.ToString();
         healthBar.value = character.characterHealth / character.characterMaxHealth;
         if (healthBar.value > 0.3)
         {
