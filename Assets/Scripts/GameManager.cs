@@ -127,7 +127,7 @@ public class GameManager : MonoBehaviour {
 
 
         songPosition = (float)AudioSettings.dspTime - dsptimesong;
-        songPosInBeats = (float)Math.Round((songPosition / secPerBeat), 1);
+        songPosInBeats = (float)Math.Round((songPosition / secPerBeat), 2);
         if (SceneManager.GetActiveScene().name == "Level1")
         {
             SpawningNotes(l1UpNotesList, l1LeftNotesList, l1RightNotesList);
