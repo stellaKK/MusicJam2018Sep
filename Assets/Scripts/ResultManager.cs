@@ -49,6 +49,9 @@ public class ResultManager : MonoBehaviour {
 
 
     private void CalculateRank() {
+        print(PlayerPrefs.GetInt("Combo"));
+        print(PlayerPrefs.GetInt("L1Notes"));
+
         if (PlayerPrefs.GetString("CurrentScene") == "Level1")
         {
             score = PlayerPrefs.GetInt("Combo") / PlayerPrefs.GetInt("L1Notes");

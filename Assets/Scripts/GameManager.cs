@@ -89,6 +89,7 @@ public class GameManager : MonoBehaviour {
         upNextIndex = 0;
         leftNextIndex = 0;
         rightNextIndex = 0;
+        maxCombo = 0;
     }
 
     // Update is called once per frame
@@ -97,6 +98,9 @@ public class GameManager : MonoBehaviour {
         if (character.characterHealth <= 0)
         {
             PlayerPrefs.SetInt("Fail", 1);
+            PlayerPrefs.SetString("CurrentScene", SceneManager.GetActiveScene().name);
+            PlayerPrefs.SetString("SongName", music.clip.name);
+            PlayerPrefs.SetInt("Combo", maxCombo);
             SceneManager.LoadScene("Result");
         }
 

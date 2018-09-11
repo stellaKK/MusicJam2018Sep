@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ChangeBG.cs" />
+    <Compile Include="Assets\DamagePop.cs" />
     <Compile Include="Assets\Scripts\Activator.cs" />
     <Compile Include="Assets\Scripts\Activators.cs" />
     <Compile Include="Assets\Scripts\Boss.cs" />

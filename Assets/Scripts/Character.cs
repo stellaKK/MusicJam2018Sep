@@ -13,15 +13,20 @@ public class Character : MonoBehaviour {
     public bool isAttackingSingle = false;
     public bool isAttackingDouble = false;
 
-    private float damage = 1f;
+    public float damage = 1f;
     private Animator animator;
     GameManager gameMaster;
+
+    GameObject damagePopSpawner;
+    public GameObject damagePop;
+
     // Use this for initialization
     void Start () {
         notesMissed = 0;
         characterHealth = characterMaxHealth;
         animator = GetComponent<Animator>();
         gameMaster = GameObject.Find("GameManager").GetComponent<GameManager>();
+        damagePopSpawner = GameObject.Find("DamagePopSpawner");
     }
 
     // Update is called once per frame
@@ -59,6 +64,10 @@ public class Character : MonoBehaviour {
         damage = 1 + notesMissed * 3;
         characterHealth -= damage;
         gameMaster.comboCount = 0;
+
+        Vector3 position = damagePopSpawner.transform.position;
+        Instantiate(damagePop, position, Quaternion.identity);
+
 
         animator.SetTrigger("takeDamageTrigger");
     }
