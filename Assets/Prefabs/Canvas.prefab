@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 224669674388658842}
   - component: {fileID: 222196576517281766}
   - component: {fileID: 114313976806420772}
+  - component: {fileID: 95148486450044614}
   m_Layer: 5
   m_Name: ComboBar
   m_TagString: Untagged
@@ -199,6 +200,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &95148486450044614
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1713181543324190}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1591eac9534b03c4b8d69885e9ce1267, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114055027098651392
 MonoBehaviour:
   m_ObjectHideFlags: 1

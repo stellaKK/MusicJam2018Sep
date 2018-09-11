@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour {
     private NoteSpawner rightNoteSpawner;
 
     private AudioSource music;
+    private Animator comboAnimator;
 
     int bpm = 30;
 
@@ -48,7 +49,6 @@ public class GameManager : MonoBehaviour {
     float[] l3UpNotesList = { 5.88f, 6.64f, 7.38f, 8.13f, 8.86f, 9.62f, 10.36f, 11.14f, 11.69f, 12.08f, 12.43f, 12.83f, 13.21f, 13.59f, 13.94f, 14.33f, 14.67f, 15.05f, 15.44f, 15.81f, 16.18f, 16.57f, 16.94f, 17.31f, 17.68f, 18.07f, 18.45f, 18.81f, 19.19f, 19.58f, 19.96f, 20.33f, 20.71f, 21.09f, 21.45f, 21.82f, 22.2f, 22.57f, 22.94f, 23.29f, 23.51f, 23.69f, 23.89f, 24.08f, 25.74f, 25.92f, 26.14f, 26.32f, 26.51f, 26.7f, 26.88f, 27.06f, 31.76f, 31.95f, 32.13f, 32.32f, 34.75f, 34.95f, 35.13f, 35.31f, 37.75f, 38.14f, 40.76f, 41.13f, 43.34f, 44.33f, 45.15f, 46.38f, 47.32f, 47.59f, 47.96f, 48.8f, 49.09f, 49.46f, 50.3f, 50.58f, 50.97f, 51.81f, 52.09f, 52.48f, 53.29f, 53.59f, 53.99f, 54.81f, 55.11f, 55.48f, 56.31f, 56.61f, 56.98f, 57.79f, 58.07f, 58.45f, 59.13f, 59.32f, 59.51f, 59.68f, 61.38f, 61.56f, 61.75f, 61.94f, 62.86f, 63.04f, 63.23f, 63.42f, 65.89f, 66.26f, 68.89f, 69.25f, 71.86f, 72.07f, 72.25f, 72.43f, 74.87f, 75.06f, 75.25f, 75.45f };
     float[] l3LeftNotesList = { 5.51f, 7.04f, 8.5f, 10.01f, 11.49f, 12.26f, 13.02f, 13.78f, 14.51f, 15.25f, 15.98f, 16.75f, 17.88f, 18.62f, 19.37f, 20.13f, 20.9f, 21.62f, 22.39f, 23.11f, 25.02f, 25.2f, 25.37f, 25.56f, 27.99f, 28.18f, 28.35f, 28.58f, 31f, 31.19f, 31.38f, 31.55f, 34.01f, 34.18f, 34.38f, 34.56f, 37.01f, 37.38f, 40f, 40.39f, 42.98f, 43.99f, 44.9f, 45.63f, 47.12f, 47.76f, 48.14f, 48.32f, 48.63f, 49.27f, 49.66f, 49.82f, 50.14f, 50.78f, 51.17f, 51.35f, 51.64f, 52.29f, 52.66f, 52.86f, 53.12f, 53.78f, 54.16f, 54.35f, 54.64f, 55.31f, 55.67f, 55.85f, 56.13f, 56.79f, 57.17f, 57.36f, 57.61f, 58.27f, 58.65f, 58.84f, 60.62f, 60.81f, 60.99f, 61.19f, 62.14f, 62.3f, 62.5f, 62.68f, 65.13f, 65.53f, 68.12f, 68.51f, 71.13f, 71.32f, 71.5f, 71.69f, 74.14f, 74.31f, 74.5f, 74.68f };
     float[] l3RightNotesList = { 6.27f, 7.77f, 9.26f, 10.75f, 11.87f, 12.63f, 13.38f, 14.15f, 14.87f, 15.61f, 16.38f, 17.14f, 17.5f, 18.25f, 19.01f, 19.75f, 20.5f, 21.27f, 22f, 22.77f, 24.26f, 24.45f, 24.63f, 24.8f, 27.25f, 27.44f, 27.64f, 27.8f, 28.75f, 28.94f, 29.13f, 29.31f, 29.47f, 32.5f, 32.69f, 32.89f, 33.07f, 33.26f, 33.45f, 33.63f, 33.82f, 35.49f, 35.7f, 35.89f, 36.08f, 36.27f, 36.45f, 36.62f, 36.8f, 38.51f, 38.9f, 39.26f, 39.63f, 41.51f, 41.88f, 43.6f, 44.65f, 45.42f, 47.42f, 48.9f, 50.4f, 51.92f, 53.39f, 54.91f, 56.41f, 57.89f, 59.86f, 60.05f, 60.25f, 60.43f, 63.6f, 63.79f, 63.98f, 64.18f, 64.35f, 64.57f, 64.76f, 64.93f, 66.64f, 67f, 67.38f, 67.74f, 69.63f, 70.01f, 70.37f, 70.73f, 72.61f, 72.8f, 72.99f, 73.19f, 73.38f, 73.57f, 73.75f, 73.93f, 75.64f, 75.81f, 76f, 76.17f, 76.37f, 76.56f, 76.74f, 76.93f };
-
     private bool upEnd = false;
     private bool leftEnd = false;
     private bool rightEnd = false;
@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour {
         healthBarFill = GameObject.Find("HealthBarFill").GetComponent<Image>();
 
         comboText = GameObject.Find("ComboBar").GetComponent<Text>();
+        comboAnimator = GameObject.Find("ComboBar").GetComponent<Animator>();
         upNoteSpawner = GameObject.Find("UpSpawner").GetComponent<NoteSpawner>();
         leftNoteSpawner = GameObject.Find("LeftSpawner").GetComponent<NoteSpawner>();
         rightNoteSpawner = GameObject.Find("RightSpawner").GetComponent<NoteSpawner>();
@@ -116,6 +117,10 @@ public class GameManager : MonoBehaviour {
         if (maxCombo <= comboCount)
         {
             maxCombo = comboCount;
+
+            if (maxCombo % 10 == 0 && maxCombo != 0) {
+                comboAnimator.SetTrigger("ComboTrigger");
+            }
         }
         comboText.text = comboCount.ToString();
 
