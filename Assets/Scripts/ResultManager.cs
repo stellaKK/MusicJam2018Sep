@@ -9,7 +9,6 @@ public class ResultManager : MonoBehaviour {
     Text songName;
     Text combo;
     Text questStatus;
-    Text questUnlocked;
     Text rank;
 
     int score;
@@ -19,28 +18,31 @@ public class ResultManager : MonoBehaviour {
         songName = GameObject.Find("SongName").GetComponent<Text>();
         combo = GameObject.Find("Combo").GetComponent<Text>();
         questStatus = GameObject.Find("QuestStatus").GetComponent<Text>();
-        questUnlocked = GameObject.Find("QuestUnlocked").GetComponent<Text>();
         rank = GameObject.Find("Rank").GetComponent<Text>();
 
-        songName.text = PlayerPrefs.GetString("SongName");
-        combo.text = PlayerPrefs.GetInt("Combo").ToString();
+        songName.text = "Song Name: " + PlayerPrefs.GetString("SongName");
+        combo.text = "Max Combo: " + PlayerPrefs.GetInt("Combo").ToString();
 
 
         if (PlayerPrefs.GetInt("Fail") == 1)
         {
             // If player fails the last scene, set rank to F
             rank.text = "F";
-            questStatus.text = "Not Completed";
+            questStatus.text = "Quest Status: Failed";
         }
         else {
             CalculateRank();
-            questStatus.text = "Completed";
-            if (PlayerPrefs.GetString("CurrentScene") == "Level1") {
+            questStatus.text = "Quest Status: Completed";
+            if (PlayerPrefs.GetString("CurrentScene") == "Level1")
+            {
                 PlayerPrefs.SetInt("Quest2Unlocked", 1);
-                questUnlocked.text = "Quest 2 Unlocked.";
-            } else if (PlayerPrefs.GetString("CurrentScene") == "Level2") {
+            }
+            else if (PlayerPrefs.GetString("CurrentScene") == "Level2")
+            {
                 PlayerPrefs.SetInt("Quest3Unlocked", 1);
-                questUnlocked.text = "Quest 3 Unlocked.";
+            }
+            else if (PlayerPrefs.GetString("CurrentScene") == "Level3") {
+                PlayerPrefs.SetInt("Quest3Completed", 1);
             }
         }
     }
