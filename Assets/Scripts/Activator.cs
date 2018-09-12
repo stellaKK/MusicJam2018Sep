@@ -15,6 +15,10 @@ public class Activator : MonoBehaviour {
     private float pressDelay = 0.1f; // how long before Player can press again
     private bool isDoubleClicking = false;
 
+    public AudioClip notesDestroyedSound;
+    public AudioClip dodgeSound;
+    private AudioSource audioSource;
+
     private GameObject character;
     private Character characterScript;
     private SpriteRenderer spriteRenderer;
@@ -30,8 +34,9 @@ public class Activator : MonoBehaviour {
         character = GameObject.Find("Character");
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         characterScript = character.GetComponent<Character>();
+        audioSource = GetComponent<AudioSource>();
         color = spriteRenderer.color;
-    }
+    } 
 	
 	// Update is called once per frame
 	void Update () {
@@ -50,6 +55,8 @@ public class Activator : MonoBehaviour {
                     characterScript.isFacingRight = false;
                     characterScript.isDodging = true;
                     dodgeCooler = true;
+                    audioSource.clip = dodgeSound;
+                    audioSource.Play();
                     character.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1, 0) * characterScript.dodgeSpeed);
                     Invoke("ResetDodge", 1f);
                 }
@@ -58,6 +65,8 @@ public class Activator : MonoBehaviour {
                     characterScript.isFacingRight = true;
                     characterScript.isDodging = true;
                     dodgeCooler = true;
+                    audioSource.clip = dodgeSound;
+                    audioSource.Play();
                     character.GetComponent<Rigidbody2D>().AddForce(Vector2.right * characterScript.dodgeSpeed);
                     Invoke("ResetDodge", 1f);
                 }
@@ -85,6 +94,8 @@ public class Activator : MonoBehaviour {
                         {
                             gameManager.comboCount += 1;
                             Destroy(note);
+                            audioSource.clip = notesDestroyedSound;
+                            audioSource.Play();
                             active = false;
                         }
                         else
@@ -93,6 +104,8 @@ public class Activator : MonoBehaviour {
                             {
                                 gameManager.comboCount += 1;
                                 Destroy(note);
+                                audioSource.clip = notesDestroyedSound;
+                                audioSource.Play();
                                 active = false;
                             } 
                         }
