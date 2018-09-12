@@ -21,8 +21,22 @@ public class ResultManager : MonoBehaviour {
         rank = GameObject.Find("Rank").GetComponent<Text>();
 
         songName.text = "Song Name: " + PlayerPrefs.GetString("SongName");
-        combo.text = "Max Combo: " + PlayerPrefs.GetInt("Combo").ToString();
 
+        if (PlayerPrefs.GetString("CurrentScene") == "Level1")
+        {
+            combo.text = "Max Combo: " + PlayerPrefs.GetInt("Combo").ToString() + " / "
+            + PlayerPrefs.GetInt("L1Notes").ToString();
+        }
+        else if (PlayerPrefs.GetString("CurrentScene") == "Level2")
+        {
+            combo.text = "Max Combo: " + PlayerPrefs.GetInt("Combo").ToString() + " / "
+            + PlayerPrefs.GetInt("L2Notes").ToString();
+        }
+        else if (PlayerPrefs.GetString("CurrentScene") == "Level3")
+        {
+            combo.text = "Max Combo: " + PlayerPrefs.GetInt("Combo").ToString() + " / "
+            + PlayerPrefs.GetInt("L3Notes").ToString();
+        }
 
         if (PlayerPrefs.GetInt("Fail") == 1)
         {
