@@ -71,26 +71,32 @@ public class ResultManager : MonoBehaviour {
         if (score == 1)
         {
             rank.text = "SS";
+            rank.color = new Color32(255, 245, 141, 255);
         }
         else if (score < 1 && score >= 0.95)
         {
             rank.text = "S";
+            rank.color = new Color32(255, 245, 141, 255);
         }
         else if (score < 0.95 && score >= 0.80)
         {
             rank.text = "A";
+            rank.color = new Color32(255, 114, 91, 255);
         }
         else if (score < 0.80 && score >= 0.60)
         {
             rank.text = "B";
+            rank.color = new Color32(255, 114, 91, 255);
         }
         else if (score < 0.60 && score >= 0.40)
         {
             rank.text = "C";
+            rank.color = new Color32(255, 114, 91, 255);
         }
         else
         {
             rank.text = "D";
+            rank.color = new Color32(137, 164, 231, 255);
         }
     }
 }
