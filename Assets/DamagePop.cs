@@ -20,10 +20,16 @@ public class DamagePop : MonoBehaviour {
             }
       }
         healthText.text = character.damage.ToString();
+
+        Invoke("DestroySelf", 2f);
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
+        transform.Translate(Vector2.up * Time.deltaTime, Space.World);
 	}
+
+    void DestroySelf() {
+        Destroy(gameObject);
+    }
 }

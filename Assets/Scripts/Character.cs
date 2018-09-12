@@ -65,9 +65,9 @@ public class Character : MonoBehaviour {
         characterHealth -= damage;
         gameMaster.comboCount = 0;
 
-        Vector3 position = damagePopSpawner.transform.position;
+        Vector3 position = new Vector3 (damagePopSpawner.transform.position.x,
+             damagePopSpawner.transform.position.y, -10f);
         Instantiate(damagePop, position, Quaternion.identity);
-
 
         animator.SetTrigger("takeDamageTrigger");
     }
