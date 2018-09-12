@@ -113,12 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &129706528 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114386704179915504, guid: 078bc3a3d9c06804ebcbf04aebc9013a,
-    type: 2}
-  m_PrefabInternal: {fileID: 409996927}
-  m_Script: {fileID: 11500000, guid: f22451753609fe342af1d4291c37b868, type: 3}
 --- !u!1 &139141006
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +330,60 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 078bc3a3d9c06804ebcbf04aebc9013a, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &409996928 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114386704179915504, guid: 078bc3a3d9c06804ebcbf04aebc9013a,
+    type: 2}
+  m_PrefabInternal: {fileID: 409996927}
+  m_Script: {fileID: 11500000, guid: f22451753609fe342af1d4291c37b868, type: 3}
+--- !u!1001 &420687448
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4554780373771076, guid: a412b1fe224047e4a96834736c99ede4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554780373771076, guid: a412b1fe224047e4a96834736c99ede4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554780373771076, guid: a412b1fe224047e4a96834736c99ede4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554780373771076, guid: a412b1fe224047e4a96834736c99ede4, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554780373771076, guid: a412b1fe224047e4a96834736c99ede4, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554780373771076, guid: a412b1fe224047e4a96834736c99ede4, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554780373771076, guid: a412b1fe224047e4a96834736c99ede4, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4554780373771076, guid: a412b1fe224047e4a96834736c99ede4, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a412b1fe224047e4a96834736c99ede4, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!114 &420687449 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114045486844219170, guid: a412b1fe224047e4a96834736c99ede4,
+    type: 2}
+  m_PrefabInternal: {fileID: 420687448}
+  m_Script: {fileID: 11500000, guid: 42f4e597a1803f844ab6298b57363c81, type: 3}
 --- !u!1 &460937314
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,7 +1196,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 129706528}
+      - m_Target: {fileID: 409996928}
         m_MethodName: LoadLevel
         m_Mode: 5
         m_Arguments:
@@ -1157,6 +1205,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Start
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 420687449}
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
