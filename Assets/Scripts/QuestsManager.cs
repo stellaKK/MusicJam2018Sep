@@ -52,7 +52,7 @@ public class QuestsManager : MonoBehaviour {
 
         if (PlayerPrefs.GetInt("Quest3Unlocked") == 1)
         {
-            quest2Button.interactable = true;
+            quest3Button.interactable = true;
         }
     }
 
