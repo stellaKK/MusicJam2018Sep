@@ -59,8 +59,8 @@ public class GameManager : MonoBehaviour {
     // Use this for initialization
     void Start() {
         PlayerPrefs.SetInt("L1Notes", l1UpNotesList.Length + l1LeftNotesList.Length + l1RightNotesList.Length);
-        PlayerPrefs.SetInt("L2Notes", l1UpNotesList.Length + l1LeftNotesList.Length + l1RightNotesList.Length);
-        PlayerPrefs.SetInt("L3Notes", l1UpNotesList.Length + l1LeftNotesList.Length + l1RightNotesList.Length);
+        PlayerPrefs.SetInt("L2Notes", l2UpNotesList.Length + l2LeftNotesList.Length + l2RightNotesList.Length);
+        PlayerPrefs.SetInt("L3Notes", l3UpNotesList.Length + l3LeftNotesList.Length + l3RightNotesList.Length);
 
         maxCombo = -1;
         character = GameObject.Find("Character").GetComponent<Character>();
