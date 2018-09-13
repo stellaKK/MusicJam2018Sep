@@ -11,6 +11,10 @@ public class ResultManager : MonoBehaviour {
     Text questStatus;
     Text rank;
 
+    private AudioSource audioSourcer;
+    public AudioClip successSFX;
+    public AudioClip failureSFX;
+
     int score;
 
     // Use this for initialization
@@ -19,6 +23,7 @@ public class ResultManager : MonoBehaviour {
         combo = GameObject.Find("Combo").GetComponent<Text>();
         questStatus = GameObject.Find("QuestStatus").GetComponent<Text>();
         rank = GameObject.Find("Rank").GetComponent<Text>();
+        audioSourcer = GetComponent<AudioSource>();
 
         songName.text = "Song Name: " + PlayerPrefs.GetString("SongName");
 
@@ -43,10 +48,15 @@ public class ResultManager : MonoBehaviour {
             // If player fails the last scene, set rank to F
             rank.text = "F";
             questStatus.text = "Quest Status: Failed";
+            audioSourcer.clip = failureSFX;
+            audioSourcer.Play();
         }
         else {
             CalculateRank();
             questStatus.text = "Quest Status: Completed";
+            audioSourcer.clip = successSFX;
+            audioSourcer.Play();
+
             if (PlayerPrefs.GetString("CurrentScene") == "Level1")
             {
                 PlayerPrefs.SetInt("Quest2Unlocked", 1);
