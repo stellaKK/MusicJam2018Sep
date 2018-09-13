@@ -14,7 +14,7 @@ public class Shredder : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player") {
-            character.characterHealth -= 200;
+            character.characterHealth -= 1000;
         }
     }
 }

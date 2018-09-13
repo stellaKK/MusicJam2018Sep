@@ -14,6 +14,7 @@ public class Character : MonoBehaviour {
     public bool isAttackingDouble = false;
 
     public float damage = 1f;
+    private int sceneDamage;
     private Animator animator;
     GameManager gameMaster;
 
@@ -61,7 +62,21 @@ public class Character : MonoBehaviour {
     }
 
     private void TakingDamage() {
-        damage = 1 + notesMissed * 3;
+
+        if (PlayerPrefs.GetString("CurrentScene") == "Level1")
+        {
+            sceneDamage = 1;
+        }
+        else if (PlayerPrefs.GetString("CurrentScene") == "Level2")
+        {
+            sceneDamage = 2;
+        }
+        else if (PlayerPrefs.GetString("CurrentScene") == "Level3")
+        {
+            sceneDamage = 3;
+        }
+
+        damage = sceneDamage + notesMissed * 3;
         characterHealth -= damage;
         gameMaster.comboCount = 0;
 

@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour {
         PlayerPrefs.SetInt("L1Notes", l1UpNotesList.Length + l1LeftNotesList.Length + l1RightNotesList.Length);
         PlayerPrefs.SetInt("L2Notes", l2UpNotesList.Length + l2LeftNotesList.Length + l2RightNotesList.Length);
         PlayerPrefs.SetInt("L3Notes", l3UpNotesList.Length + l3LeftNotesList.Length + l3RightNotesList.Length);
+        PlayerPrefs.SetString("CurrentScene", SceneManager.GetActiveScene().name);
 
         maxCombo = -1;
         character = GameObject.Find("Character").GetComponent<Character>();
@@ -98,7 +99,6 @@ public class GameManager : MonoBehaviour {
         if (character.characterHealth <= 0)
         {
             PlayerPrefs.SetInt("Fail", 1);
-            PlayerPrefs.SetString("CurrentScene", SceneManager.GetActiveScene().name);
             PlayerPrefs.SetString("SongName", music.clip.name);
             PlayerPrefs.SetInt("Combo", maxCombo);
             SceneManager.LoadScene("Result");
@@ -107,7 +107,6 @@ public class GameManager : MonoBehaviour {
 
         if (!music.isPlaying) {
             PlayerPrefs.SetInt("Fail", 0);
-            PlayerPrefs.SetString("CurrentScene", SceneManager.GetActiveScene().name);
             PlayerPrefs.SetString("SongName", music.clip.name);
             PlayerPrefs.SetInt("Combo", maxCombo);
 

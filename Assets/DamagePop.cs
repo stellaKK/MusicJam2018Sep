@@ -19,7 +19,7 @@ public class DamagePop : MonoBehaviour {
                 healthText = child.gameObject.GetComponent<Text>();
             }
       }
-        healthText.text = character.damage.ToString();
+        healthText.text = "-" + character.damage.ToString();
 
         Invoke("DestroySelf", 2f);
     }
