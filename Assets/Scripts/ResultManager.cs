@@ -15,7 +15,7 @@ public class ResultManager : MonoBehaviour {
     public AudioClip successSFX;
     public AudioClip failureSFX;
 
-    int score;
+    private float score;
 
     // Use this for initialization
     void Start() {
@@ -73,20 +73,23 @@ public class ResultManager : MonoBehaviour {
 
 
     private void CalculateRank() {
-        print(PlayerPrefs.GetInt("Combo"));
-        print(PlayerPrefs.GetInt("L1Notes"));
 
         if (PlayerPrefs.GetString("CurrentScene") == "Level1")
         {
-            score = PlayerPrefs.GetInt("Combo") / PlayerPrefs.GetInt("L1Notes");
+            score = (float) PlayerPrefs.GetInt("Combo") / PlayerPrefs.GetInt("L1Notes");
+            print(PlayerPrefs.GetInt("Combo"));
+            print(PlayerPrefs.GetInt("L1Notes"));
+            print(score);
         }
         else if (PlayerPrefs.GetString("CurrentScene") == "Level2")
         {
-            score = PlayerPrefs.GetInt("Combo") / PlayerPrefs.GetInt("L2Notes");
+            score = (float) PlayerPrefs.GetInt("Combo") / PlayerPrefs.GetInt("L2Notes");
+            print(score);
         }
         else if (PlayerPrefs.GetString("CurrentScene") == "Level3")
         {
-            score = PlayerPrefs.GetInt("Combo") / PlayerPrefs.GetInt("L3Notes");
+            score = (float)PlayerPrefs.GetInt("Combo") / PlayerPrefs.GetInt("L3Notes");
+            print(score);
         }
         else {
             score = 0;
