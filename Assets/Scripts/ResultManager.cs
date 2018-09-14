@@ -25,7 +25,7 @@ public class ResultManager : MonoBehaviour {
         rank = GameObject.Find("Rank").GetComponent<Text>();
         audioSourcer = GetComponent<AudioSource>();
 
-        songName.text = "Song Name: " + PlayerPrefs.GetString("SongName");
+        songName.text = "Song: " + PlayerPrefs.GetString("SongName");
 
         if (PlayerPrefs.GetString("CurrentScene") == "Level1")
         {
@@ -97,29 +97,24 @@ public class ResultManager : MonoBehaviour {
             rank.text = "SS";
             rank.color = new Color32(255, 245, 141, 255);
         }
-        else if (score < 1 && score >= 0.95)
+        else if (score < 1 && score >= 0.9)
         {
             rank.text = "S";
             rank.color = new Color32(255, 245, 141, 255);
         }
-        else if (score < 0.95 && score >= 0.80)
+        else if (score < 0.9 && score >= 0.60)
         {
             rank.text = "A";
             rank.color = new Color32(255, 114, 91, 255);
         }
-        else if (score < 0.80 && score >= 0.60)
+        else if (score < 0.60 && score >= 0.30)
         {
             rank.text = "B";
             rank.color = new Color32(255, 114, 91, 255);
         }
-        else if (score < 0.60 && score >= 0.40)
-        {
-            rank.text = "C";
-            rank.color = new Color32(255, 114, 91, 255);
-        }
         else
         {
-            rank.text = "D";
+            rank.text = "C";
             rank.color = new Color32(137, 164, 231, 255);
         }
     }

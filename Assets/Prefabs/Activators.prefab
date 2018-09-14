@@ -259,7 +259,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -354,7 +354,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -639,7 +639,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -737,7 +737,7 @@ MonoBehaviour:
   key: 276
   note: {fileID: 0}
   createMode: 0
-  notesDestroyedSound: {fileID: 8300000, guid: 812c472c1952c85438dbaed03e098a3a, type: 3}
+  notesDestroyedSound: {fileID: 8300000, guid: 81e061070b434954e944731619b67ebb, type: 3}
   dodgeSound: {fileID: 8300000, guid: 915866c8962a761498701c2d56ea6dd0, type: 3}
 --- !u!114 &114260270771949050
 MonoBehaviour:
@@ -753,7 +753,7 @@ MonoBehaviour:
   key: 275
   note: {fileID: 0}
   createMode: 0
-  notesDestroyedSound: {fileID: 8300000, guid: 812c472c1952c85438dbaed03e098a3a, type: 3}
+  notesDestroyedSound: {fileID: 8300000, guid: 81e061070b434954e944731619b67ebb, type: 3}
   dodgeSound: {fileID: 8300000, guid: 915866c8962a761498701c2d56ea6dd0, type: 3}
 --- !u!114 &114274596868148572
 MonoBehaviour:
@@ -785,7 +785,7 @@ MonoBehaviour:
   key: 273
   note: {fileID: 0}
   createMode: 0
-  notesDestroyedSound: {fileID: 8300000, guid: 812c472c1952c85438dbaed03e098a3a, type: 3}
+  notesDestroyedSound: {fileID: 8300000, guid: 81e061070b434954e944731619b67ebb, type: 3}
   dodgeSound: {fileID: 8300000, guid: 915866c8962a761498701c2d56ea6dd0, type: 3}
 --- !u!114 &114573155307409306
 MonoBehaviour:
